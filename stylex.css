@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background-color: #ffd9e0;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Centered Rofii text with emoji */
+.rofii-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+/* Rofii text with emojis in one line */
+.rofii {
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Adjust spacing between text and emojis */
+}
+
+/* Paragraph directly below "Rofii" */
+.rofii-message {
+    font-size: clamp(16px, 2vw, 24px);
+    color: #800F2F;
+    margin-top: 5px; /* Small gap */
+    font-weight: 500;
+}
+
+/* Floating text (random "Rofii" and "wifey" with emojis) */
+.floating-text {
+    position: absolute;
+    font-weight: bold;
+    color: black;
+    opacity: 0.3;
+    font-size: clamp(10px, 4vw, 20px); /* Responsive font size */
+    animation: floatUp 8s linear infinite;
+}
+
+/* Floating effect (spaced better) */
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh);
+        opacity: 0.7;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .rofii {
+        font-size: clamp(30px, 7vw, 60px);
+    }
+    .rofii-message {
+        font-size: clamp(14px, 2.5vw, 20px);
+    }
+    .floating-text {
+        font-size: clamp(8px, 3vw, 16px);
+    }
+}
